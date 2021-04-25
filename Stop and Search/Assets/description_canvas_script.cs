@@ -10,7 +10,7 @@ public class description_canvas_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.text = "the person is " + "person descriptor sdfsfgs gsfgsdg sdfgsdgsd gsdgdfsgdg sdgsdgdsg sdgdsgf sfdgsdgds";
+        text.text = "the person is " + MatchingDescriptionsData.currentPersonDescriptor.description+ " yeet";
     }
 
     // Update is called once per frame

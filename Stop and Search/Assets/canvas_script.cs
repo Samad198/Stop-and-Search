@@ -45,35 +45,35 @@ public class canvas_script : MonoBehaviour
               break;
           case 2:
                 MatchingDescriptionsData.PersonDescriptor description1 = new MatchingDescriptionsData.PersonDescriptor("coo","l","wha","t","s","d","f");
-                MatchingDescriptionsData.PersonDescriptor description2 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description3 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description4 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description5 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description6 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description7 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description8 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description9 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description10 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description11 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description12 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description13 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description14 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description15 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description16 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description17 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description18 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description19 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description20 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description21 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description22 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description23 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description24 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description25 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description26 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description27 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description28 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description29 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
-                MatchingDescriptionsData.PersonDescriptor description30 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","");
+                MatchingDescriptionsData.PersonDescriptor description2 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d2");
+                MatchingDescriptionsData.PersonDescriptor description3 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d3");
+                MatchingDescriptionsData.PersonDescriptor description4 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d4");
+                MatchingDescriptionsData.PersonDescriptor description5 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d5");
+                MatchingDescriptionsData.PersonDescriptor description6 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d6");
+                MatchingDescriptionsData.PersonDescriptor description7 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d7");
+                MatchingDescriptionsData.PersonDescriptor description8 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d8");
+                MatchingDescriptionsData.PersonDescriptor description9 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d9");
+                MatchingDescriptionsData.PersonDescriptor description10 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d10");
+                MatchingDescriptionsData.PersonDescriptor description11 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d11");
+                MatchingDescriptionsData.PersonDescriptor description12 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d12");
+                MatchingDescriptionsData.PersonDescriptor description13 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d13");
+                MatchingDescriptionsData.PersonDescriptor description14 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d14");
+                MatchingDescriptionsData.PersonDescriptor description15 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d15");
+                MatchingDescriptionsData.PersonDescriptor description16 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d16");
+                MatchingDescriptionsData.PersonDescriptor description17 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d17");
+                MatchingDescriptionsData.PersonDescriptor description18 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d18");
+                MatchingDescriptionsData.PersonDescriptor description19 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d19");
+                MatchingDescriptionsData.PersonDescriptor description20 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d20");
+                MatchingDescriptionsData.PersonDescriptor description21 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d21");
+                MatchingDescriptionsData.PersonDescriptor description22 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d22");
+                MatchingDescriptionsData.PersonDescriptor description23 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d23");
+                MatchingDescriptionsData.PersonDescriptor description24 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d24");
+                MatchingDescriptionsData.PersonDescriptor description25 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d25");
+                MatchingDescriptionsData.PersonDescriptor description26 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d26");
+                MatchingDescriptionsData.PersonDescriptor description27 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d27");
+                MatchingDescriptionsData.PersonDescriptor description28 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d28");
+                MatchingDescriptionsData.PersonDescriptor description29 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d29");
+                MatchingDescriptionsData.PersonDescriptor description30 = new MatchingDescriptionsData.PersonDescriptor("","","","","","","d30");
                 MatchingDescriptionsData.PersonDescriptor description31 = new MatchingDescriptionsData.PersonDescriptor();
                 MatchingDescriptionsData.PersonDescriptor description32 = new MatchingDescriptionsData.PersonDescriptor();
                 MatchingDescriptionsData.PersonDescriptor description33 = new MatchingDescriptionsData.PersonDescriptor();
@@ -95,7 +95,7 @@ public class canvas_script : MonoBehaviour
                 MatchingDescriptionsData.PersonDescriptor description49 = new MatchingDescriptionsData.PersonDescriptor();
                 MatchingDescriptionsData.PersonDescriptor description50 = new MatchingDescriptionsData.PersonDescriptor();
 
-                MatchingDescriptionsData.PersonDescriptor[ ] personDescriptors = new MatchingDescriptionsData.PersonDescriptor[]{
+                MatchingDescriptionsData.PersonDescriptor[ ] personDs = new MatchingDescriptionsData.PersonDescriptor[]{
                     description1, description2, description3,description4,description5,
                     description6, description7, description8,description9,description10,
                     description11, description12, description13,description14,description15,
@@ -108,12 +108,20 @@ public class canvas_script : MonoBehaviour
                     description46, description47, description48,description49,description50,
                     } ; 
 
+                    List <MatchingDescriptionsData.PersonDescriptor> personDescriptors = new List<MatchingDescriptionsData.PersonDescriptor>();
+                    for(int i=0; i<personDs.Length;i++){
+                        personDescriptors.Add(personDs[i]);
+                    }
+
               /*
               pass personDescriptors
               */
               MatchingDescriptionsData.score = 100;
               MatchingDescriptionsData.testsLeft = 10;
               MatchingDescriptionsData.personDescriptors = personDescriptors;
+              int index = Random.Range(0, MatchingDescriptionsData.personDescriptors.Count);
+              MatchingDescriptionsData.currentPersonDescriptor = MatchingDescriptionsData.personDescriptors[index];
+              MatchingDescriptionsData.personDescriptors.RemoveAt(index);
 
               SceneManager.LoadScene("MatchingDescriptionsScene");
               break;

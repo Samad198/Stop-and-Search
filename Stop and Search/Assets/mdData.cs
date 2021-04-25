@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 public static class MatchingDescriptionsData
 {
 
@@ -22,37 +24,17 @@ public class PersonDescriptor {
         this.clothes_top = "";
         this.clothes_bottom = "";
         this.build = "";
-        this.description = "";
+        this.description = "it was a rando";
     }
 }
 
-    public static PersonDescriptor[] personDescriptors;
+    public static List <PersonDescriptor> personDescriptors;
     public static int score, testsLeft;
     public static PersonDescriptor currentPersonDescriptor;
 
-    public static PersonDescriptor[] PersonDescriptors 
-    {
-        get 
-        {
-            return personDescriptors;
-        }
-        set 
-        {
-            personDescriptors = value;
-        }
-    }
+    
 
-    public static int Score 
-    {
-        get 
-        {
-            return score;
-        }
-        set 
-        {
-            score = value;
-        }
-    }
+   
 
  
 }

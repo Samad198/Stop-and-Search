@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NPCController : MonoBehaviour
 {
@@ -105,13 +106,18 @@ public class NPCController : MonoBehaviour
     if(MatchingDescriptionsData.currentPersonDescriptor.clothes_top != "" && my_clothes_top != MatchingDescriptionsData.currentPersonDescriptor.clothes_top  ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 1;}
     if(MatchingDescriptionsData.currentPersonDescriptor.clothes_bottom != "" && my_clothes_bottom != MatchingDescriptionsData.currentPersonDescriptor.clothes_bottom  ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 1;}
     if(MatchingDescriptionsData.currentPersonDescriptor.build != "" && my_build != MatchingDescriptionsData.currentPersonDescriptor.build ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 1;}
-
+    MatchingDescriptionsData.testsLeft -= 1;
 
     if(MatchingDescriptionsData.testsLeft <= 0){
         // end game and show score
+        SceneManager.LoadScene("EndScene");
     }
     else{
         // calculate the next person descriptor and start next scene
+        int index = Random.Range (0, MatchingDescriptionsData.personDescriptors.Count);
+        MatchingDescriptionsData.currentPersonDescriptor = MatchingDescriptionsData.personDescriptors[index];
+        MatchingDescriptionsData.personDescriptors.RemoveAt(index);
+        SceneManager.LoadScene("MatchingDescriptionsScene");
     }
     
      }

@@ -6,22 +6,25 @@ using UnityEngine.UI;
 public class NPCController : MonoBehaviour
 {
     private float timeToChangeDirection;
+    private float timeToStopLook;
     private Animator animator;
     //private Rigidbody rigidBody;
-    
-    public GameObject button;
+    public CanvasGroup canvasGroup;
+    public CanvasGroup collider;
+    public Transform player;
+    public bool isFocused;
     private Vector3 currentDirection;
     Vector3 rotation;
-    public Transform player;
-    public string letsSee;
+    
+    
 
     public string my_age_range,my_gender, my_race, my_clothes_top,my_clothes_bottom, my_build;
 
-    public bool isFocused;
+    
 
 
     void OnCollisionEnter(Collision col){
-   //Debug.Log("wildin");
+   
    ChangeDirection();
  }
  
@@ -30,39 +33,46 @@ public class NPCController : MonoBehaviour
      private void Awake(){
          animator = GetComponentInChildren<Animator>();
          
-         //letsSee = MatchingDescriptionsData.personDescriptors[0].age_range;
+         //my_age_range = MatchingDescriptionsData.personDescriptors[0].age_range;
      }
      public void Start () {
-         isFocused = false;
+         //isFocused = false;
          ChangeDirection();
-         button.SetActive(false);
+         canvasGroup.alpha = 0f;
+         collider.alpha = 0f;
+        
      }
      
      // Update is called once per frame
      public void Update () {
          timeToChangeDirection -= Time.deltaTime;
+         timeToStopLook -= Time.deltaTime;
  
         if( isFocused == true) // the character is focused
         {
-            //console.log("whaaaa")
-            transform.LookAt(player);
+            
+            //transform.LookAt(player);
                 animator.Play("Idle");
-                button.SetActive(true);
-         // turn npc to face camera
-         // make the attatched text button appear
+                canvasGroup.alpha = 1f;
+                
+         
+         if (timeToStopLook <= 0) {
+             isFocused = false;
+         }
     
 
         }
 
         else{
             animator.Play("Walking");
-            button.SetActive(false);
+            
+            canvasGroup.alpha = 0f;
          if (timeToChangeDirection <= 0) {
              ChangeDirection();
          }
  
             //transform.position += Vector3.forward * Time.deltaTime * movementSpeed;
-            transform.position += transform.forward * Time.deltaTime * 5.0f;
+            transform.position += transform.forward * Time.deltaTime * 2.0f;
          
         }
      }
@@ -79,10 +89,17 @@ public class NPCController : MonoBehaviour
          timeToChangeDirection = 10.0f;
      }
 
+    public void LookAtPerson(){
+        isFocused = true;
+        timeToStopLook = 10000000000000000000.0f;
+    }
+    public void StopLookAt(){
+        timeToStopLook = 5.0f;
+    }
      
      public void StopPerson(){
          
-    /* if(MatchingDescriptionsData.currentPersonDescriptor.age_range != "" && my_age_range != MatchingDescriptionsData.currentPersonDescriptor.age_range ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 2;}
+    if(MatchingDescriptionsData.currentPersonDescriptor.age_range != "" && my_age_range != MatchingDescriptionsData.currentPersonDescriptor.age_range ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 2;}
     if(MatchingDescriptionsData.currentPersonDescriptor.race != "" && my_race != MatchingDescriptionsData.currentPersonDescriptor.race  ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 5;}
     if(MatchingDescriptionsData.currentPersonDescriptor.gender != "" && my_gender != MatchingDescriptionsData.currentPersonDescriptor.gender ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 5;}
     if(MatchingDescriptionsData.currentPersonDescriptor.clothes_top != "" && my_clothes_top != MatchingDescriptionsData.currentPersonDescriptor.clothes_top  ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 1;}
@@ -95,7 +112,7 @@ public class NPCController : MonoBehaviour
     }
     else{
         // calculate the next person descriptor and start next scene
-    } */
+    }
     
      }
 }

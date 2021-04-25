@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UnlawfulStop.unity
     guid: 422dfccb4ee54904ab0ed46239404734
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MatchingDescriptions.unity
     guid: 7a08a2876301b424d98ba4c739d7b5e5
+  - enabled: 1
+    path: Assets/Scenes/MatchingDescriptionsScene.unity
+    guid: def15c13ee1b8914688d3fe88ec03bf1
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3776d9a8256cfef4ab393554f7573b85, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b8a13aa605cd29048b7f01221ca9463d, type: 2}

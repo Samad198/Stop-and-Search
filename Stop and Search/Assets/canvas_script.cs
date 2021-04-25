@@ -115,7 +115,7 @@ public class canvas_script : MonoBehaviour
               MatchingDescriptionsData.testsLeft = 10;
               MatchingDescriptionsData.personDescriptors = personDescriptors;
 
-              SceneManager.LoadScene("MatchingDescriptions");
+              SceneManager.LoadScene("MatchingDescriptionsScene");
               break;
           case 3: 
               SceneManager.LoadScene("ReligiousItems");

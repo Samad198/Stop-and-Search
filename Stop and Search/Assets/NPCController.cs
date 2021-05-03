@@ -8,10 +8,18 @@ public class NPCController : MonoBehaviour
 {
     private float timeToChangeDirection;
     private float timeToStopLook;
+
+    private List<int> answersStack;
+    private List<int> correctAnswersStack;
+    private int answersToPick;
+
+
     private Animator animator;
     //private Rigidbody rigidBody;
     public CanvasGroup canvasGroup;
-    public CanvasGroup collider;
+    public GameObject answerButtons;
+    public GameObject answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8,answer9,answer10;
+    
     public Transform player;
     public bool isFocused;
     private Vector3 currentDirection;
@@ -52,7 +60,9 @@ public class NPCController : MonoBehaviour
          //isFocused = false;
          ChangeDirection();
          canvasGroup.alpha = 0f;
-         collider.alpha = 0f;
+         answerButtons.SetActive(false);
+         
+         timeToStopLook = 1;
             PD pd = null;
          switch(personId){
              case 1:
@@ -156,18 +166,78 @@ public class NPCController : MonoBehaviour
          my_build = pd.build;
          my_shoes = pd.shoes;
          my_hair = pd.hair;
+
+         switch(MatchingDescriptionsData.testName){
+             case "MatchingDescriptions":
+             break;
+             case "General":
+             if(MatchingDescriptionsData.gender == my_gender){
+              correctAnswersStack.Add(1); // answer 1
+              correctAnswersStack.Add(2); // answer 2
+              correctAnswersStack.Add(3); // answer 3
+              correctAnswersStack.Add(4); // answer 4
+              correctAnswersStack.Add(5); // answer 5
+              correctAnswersStack.Add(6); // answer 6
+              correctAnswersStack.Add(7); // answer 7
+              correctAnswersStack.Add(8); // answer 8
+              correctAnswersStack.Add(9); // answer 9
+              correctAnswersStack.Add(10); // answer 10
+             }
+             else{
+                 correctAnswersStack.Add(1); // answer 1
+              correctAnswersStack.Add(2); // answer 2
+              correctAnswersStack.Add(3); // answer 3
+              correctAnswersStack.Add(4); // answer 4
+              correctAnswersStack.Add(5); // answer 5
+              correctAnswersStack.Add(6); // answer 6
+              correctAnswersStack.Add(7); // answer 7
+              correctAnswersStack.Add(8); // answer 8
+              correctAnswersStack.Add(9); // answer 9
+              correctAnswersStack.Add(10); // answer 10
+             }
+             break;
+             case "ReligiousItem":
+              if(MatchingDescriptionsData.gender == my_gender){
+              correctAnswersStack.Add(1); // answer 1
+              correctAnswersStack.Add(2); // answer 2
+              correctAnswersStack.Add(3); // answer 3
+              correctAnswersStack.Add(4); // answer 4
+              correctAnswersStack.Add(5); // answer 5
+              correctAnswersStack.Add(6); // answer 6
+              correctAnswersStack.Add(7); // answer 7
+              correctAnswersStack.Add(8); // answer 8
+              correctAnswersStack.Add(9); // answer 9
+              correctAnswersStack.Add(10); // answer 10
+             }
+             else{
+                 correctAnswersStack.Add(1); // answer 1
+              correctAnswersStack.Add(2); // answer 2
+              correctAnswersStack.Add(3); // answer 3
+              correctAnswersStack.Add(4); // answer 4
+              correctAnswersStack.Add(5); // answer 5
+              correctAnswersStack.Add(6); // answer 6
+              correctAnswersStack.Add(7); // answer 7
+              correctAnswersStack.Add(8); // answer 8
+              correctAnswersStack.Add(9); // answer 9
+              correctAnswersStack.Add(10); // answer 10
+             }
+             break;
+             default:
+             break;
+
+         }
         
      }
      
      // Update is called once per frame
      public void Update () {
          timeToChangeDirection -= Time.deltaTime;
-         timeToStopLook -= Time.deltaTime;
+         //timeToStopLook -= Time.deltaTime;
  
         if( isFocused == true) // the character is focused
         {
             
-            //transform.LookAt(player);
+                transform.LookAt(player);
                 animator.Play("Idle");
                 canvasGroup.alpha = 1f;
                 
@@ -238,4 +308,212 @@ public class NPCController : MonoBehaviour
     }
     
      }
+
+
+public void StopPersonGeneral(){
+         
+    if(MatchingDescriptionsData.currentPersonDescriptor.age_range != "" && my_age_range != MatchingDescriptionsData.currentPersonDescriptor.age_range ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 2;}
+    if(MatchingDescriptionsData.currentPersonDescriptor.race != "" && my_race != MatchingDescriptionsData.currentPersonDescriptor.race  ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 5;}
+    if(MatchingDescriptionsData.currentPersonDescriptor.gender != "" && my_gender != MatchingDescriptionsData.currentPersonDescriptor.gender ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 5;}
+    if(MatchingDescriptionsData.currentPersonDescriptor.clothes_top != "" && my_clothes_top != MatchingDescriptionsData.currentPersonDescriptor.clothes_top  ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 1;}
+    if(MatchingDescriptionsData.currentPersonDescriptor.clothes_bottom != "" && my_clothes_bottom != MatchingDescriptionsData.currentPersonDescriptor.clothes_bottom  ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 1;}
+    if(MatchingDescriptionsData.currentPersonDescriptor.build != "" && my_build != MatchingDescriptionsData.currentPersonDescriptor.build ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 1;}
+    if(MatchingDescriptionsData.currentPersonDescriptor.shoes != "" && my_shoes != MatchingDescriptionsData.currentPersonDescriptor.shoes ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 1;}
+    if(MatchingDescriptionsData.currentPersonDescriptor.hair != "" && my_hair != MatchingDescriptionsData.currentPersonDescriptor.hair ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 1;}
+    MatchingDescriptionsData.testsLeft -= 1;
+
+    canvasGroup.alpha = 0f;
+    canvasGroup.interactable = false;
+    answerButtons.SetActive(true);
+    
+     }
+
+        public void chooseOtherGender(string gen){
+        int index = Random.Range (0, MatchingDescriptionsData.personDescriptors.Count);
+        if(MatchingDescriptionsData.personDescriptors[index].gender != gen){
+        MatchingDescriptionsData.currentPersonDescriptor = MatchingDescriptionsData.personDescriptors[index];
+        MatchingDescriptionsData.personDescriptors.RemoveAt(index);
+        }
+        else{chooseOtherGender(gen);}
+        }
+
+        public void markTest(){
+            for(int i=0; i<correctAnswersStack.Count;i++){
+                int correctAnswer = correctAnswersStack[i];
+                for(int j=0;j<answersStack.Count;j++){
+                    int answer = answersStack[j];
+                    if(answer == correctAnswer){
+                        MatchingDescriptionsData.score = MatchingDescriptionsData.score - Mathf.Min(Mathf.Abs(i - j), 5);//difference between i and j max 5 tho
+                        break;
+                    }
+                    if(j==answersStack.Count-1){
+                        MatchingDescriptionsData.score = MatchingDescriptionsData.score - 5;
+                        
+                    }
+                }
+            }
+        }
+     public void chooseOption1(){
+        answersStack.Add(1);
+        answer1.SetActive(false);
+        answersToPick-=1;
+        if(answersToPick<=0){
+            // calculate the users points, set it to the static script, send them to end scene or to the same scene but for girl
+            // this time
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==false){
+        chooseOtherGender(my_gender);    
+        SceneManager.LoadScene("MatchingDescriptionsScene");
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+        
+    }
+    public void chooseOption2(){
+        answersStack.Add(2);
+        answer2.SetActive(false);
+         if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==false){
+        chooseOtherGender(my_gender);    
+        SceneManager.LoadScene("MatchingDescriptionsScene");
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
+    public void chooseOption3(){
+        answersStack.Add(3);
+        answer3.SetActive(false);
+        if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==false){
+        chooseOtherGender(my_gender);    
+        SceneManager.LoadScene("MatchingDescriptionsScene");
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
+    public void chooseOption4(){
+        answersStack.Add(4);
+        answer4.SetActive(false);
+        if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==false){
+        chooseOtherGender(my_gender);    
+        SceneManager.LoadScene("MatchingDescriptionsScene");
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
+    public void chooseOption5(){
+        answersStack.Add(5);
+        answer5.SetActive(false);
+        if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==false){
+        chooseOtherGender(my_gender);    
+        SceneManager.LoadScene("MatchingDescriptionsScene");
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
+    public void chooseOption6(){
+        answersStack.Add(6);
+        answer6.SetActive(false);
+        if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==false){
+        chooseOtherGender(my_gender);    
+        SceneManager.LoadScene("MatchingDescriptionsScene");
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
+    public void chooseOption7(){
+        answersStack.Add(7);
+        answer7.SetActive(false);
+        if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==false){
+        chooseOtherGender(my_gender);    
+        SceneManager.LoadScene("MatchingDescriptionsScene");
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
+    public void chooseOption8(){
+        answersStack.Add(8);
+        answer8.SetActive(false);
+        if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==false){
+        chooseOtherGender(my_gender);    
+        SceneManager.LoadScene("MatchingDescriptionsScene");
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
+    public void chooseOption9(){
+        answersStack.Add(9);
+        answer9.SetActive(false);
+        if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==false){
+        chooseOtherGender(my_gender);    
+        SceneManager.LoadScene("MatchingDescriptionsScene");
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
+    public void chooseOption10(){
+        answersStack.Add(10);
+        answer10.SetActive(false);
+        if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==false){
+        chooseOtherGender(my_gender);    
+        SceneManager.LoadScene("MatchingDescriptionsScene");
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
 }

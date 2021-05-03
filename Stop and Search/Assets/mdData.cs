@@ -34,7 +34,9 @@ public class PersonDescriptor {
 
     public static List <PersonDescriptor> personDescriptors;
     public static int score, testsLeft;
+    public static string gender, testName;
     public static PersonDescriptor currentPersonDescriptor;
+    public static bool firstTest;
 
     
 

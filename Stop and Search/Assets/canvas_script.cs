@@ -38,10 +38,10 @@ public class canvas_script : MonoBehaviour
   switch (scenario_code)
       {
           case 0:
-              SceneManager.LoadScene("UnlawfulStop");
+              SceneManager.LoadScene("CivillianScene");
               break;
           case 1:
-              SceneManager.LoadScene("LawfulStop");
+              SceneManager.LoadScene("CivillianScene");
               break;
           case 2:
                 MatchingDescriptionsData.PersonDescriptor description1 = new MatchingDescriptionsData.PersonDescriptor("25-30","male","IC1","grey top","grey shorts","slim","white trainers","blonde hair","A 25-30 year old IC1 slim male with blonde hair wearing a grey top, grey shorts and white trainers.");

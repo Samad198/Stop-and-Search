@@ -1,0 +1,26 @@
+Officer: *Sees player
+Officer: "Stop right there you miscreant! You looking kinda sus"
+GameText: "The officer has identified you as a suspicious individual...
+	   The best course of action is to let them approach you and see
+	   What they have to say."
+Officer: *Walks towards player until they are 1 meter away from them
+Officer: "Hello, I am officer douglas and i'm stopping you because you be
+	  looking hella sus my guy... What you sayin"
+GameText: "The officer must introduce himself with his name before explaining
+	   what is going on to you
+Officer: "I work at the metropolitan police station"
+GameText: "The officer must state their police station to you. You should 
+	   remember this information as it can be used to file a report
+           on the officer in the case of any misconduct."
+Officer: " We have been told to search individuals going by your description
+	  around this area for suspicion of carrying a weapon.
+GameText: "The officer must tell you why they are stopping you and what they
+	   are looking for. If they don't then this is misconduct and you 
+	   can report them to their police station by..."
+Officer: "I am now going to search you. Please stand with your arms out"
+Officer: Performs search acttions on your virtual body
+GameText: "Once an officer has searched you, you are entitled to a copy of the
+	   search record. A search record is a record that officers keep of 
+	   what actions they performed. You can use this to..."
+GameText: "This concludes your stop and search experience"
+

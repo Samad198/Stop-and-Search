@@ -52,7 +52,7 @@ public class officer_controller : MonoBehaviour
             animator.Play("Idle");
             if (Input.anyKey)
         {
-            timeInSequence = 5.85f;
+            timeInSequence = 5.7f;
             gameTextObject.SetActive(false);
             sequenceNumber =1;
             sounds[0].source.Play();
@@ -141,7 +141,7 @@ public class officer_controller : MonoBehaviour
         }
             break;
             case 5:
-            int counter = 0;
+            
              if (!sounds[4].source.isPlaying)
         {
             if(timeInSequence<=0){

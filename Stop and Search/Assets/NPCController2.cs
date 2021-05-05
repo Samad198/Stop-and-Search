@@ -17,7 +17,7 @@ public class NPCController2 : MonoBehaviour
     private Animator animator;
    
     public CanvasGroup canvasGroup;
-    public CanvasGroup answerButtons;
+    public GameObject answerButtons;
     public GameObject answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8,answer9,answer10;
     
     public Transform player;
@@ -59,8 +59,7 @@ public class NPCController2 : MonoBehaviour
          //isFocused = false;
          ChangeDirection();
          canvasGroup.alpha = 0f;
-         //answerButtons.alpha = 0f;
-         answerButtons.interactable = false;
+         answerButtons.SetActive(false);
          
          
             PD pd = null;
@@ -302,9 +301,9 @@ public void StopPersonGeneral(){
 
     canvasGroup.alpha = 0f;
     canvasGroup.interactable = false; */
-    //answerButtons.SetActive(true);
-        answerButtons.alpha = 1f;
-         answerButtons.interactable = true;
+    
+        
+         answerButtons.SetActive(true);
     
   
     

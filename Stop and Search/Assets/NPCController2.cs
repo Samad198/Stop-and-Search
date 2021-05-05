@@ -17,8 +17,9 @@ public class NPCController2 : MonoBehaviour
     private Animator animator;
    
     public CanvasGroup canvasGroup;
+    public GameObject knife;
     public GameObject answerButtons;
-    public GameObject answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8,answer9,answer10;
+    public GameObject answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8,answer9,answer10,answer11,answer12,answer13,answer14;
     
     public Transform player;
     public bool isFocused;
@@ -169,7 +170,7 @@ public class NPCController2 : MonoBehaviour
          switch(MatchingDescriptionsData.testName){
              
              case "General":
-                answersToPick =3;
+                answersToPick =10;
              if(MatchingDescriptionsData.gender == my_gender){
               correctAnswersStack.Add(1); // answer 1
               correctAnswersStack.Add(2); // answer 2
@@ -196,7 +197,7 @@ public class NPCController2 : MonoBehaviour
              }
              break;
              case "ReligiousItem":
-             answersToPick =3;
+             answersToPick =10;
               if(MatchingDescriptionsData.gender == my_gender){
               correctAnswersStack.Add(1); // answer 1
               correctAnswersStack.Add(2); // answer 2
@@ -235,27 +236,22 @@ public class NPCController2 : MonoBehaviour
          timeToChangeDirection -= Time.deltaTime;
          //timeToStopLook -= Time.deltaTime;
 
-        /*   if (Input.GetKeyDown("space"))
-        {
-            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-        } */
-
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            chooseOption1();
-        }
+        
           if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            chooseOption5();
+           chooseOption6();
+           chooseOption7();
+           chooseOption8();
+           chooseOption9();
+           chooseOption10();
+           chooseOption1();
            chooseOption2();
-        }
-          if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            chooseOption3();
-        }
-          if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
+           chooseOption3();
            chooseOption4();
+          
         }
+        
  
         if( isFocused == true) // the character is focused
         {
@@ -280,7 +276,7 @@ public class NPCController2 : MonoBehaviour
          }
  
             //transform.position += Vector3.forward * Time.deltaTime * movementSpeed;
-            //transform.position += transform.forward * Time.deltaTime * 2.0f;
+            transform.position += transform.forward * Time.deltaTime * 2.0f;
          
         }
      }
@@ -323,7 +319,10 @@ public void StopPersonGeneral(){
     
         
     answerButtons.SetActive(true);
-    
+    if(MatchingDescriptionsData.testName != "General"){ 
+        knife.SetActive(true);
+        }  
+        
   
     
      }
@@ -362,12 +361,17 @@ public void StopPersonGeneral(){
         if(answersToPick<=0){
             // calculate the users points, set it to the static script, send them to end scene or to the same scene but for girl
             // this time
-            //markTest();
+            markTest();
             
             if(MatchingDescriptionsData.firstTest==true){
                 MatchingDescriptionsData.firstTest = false;
-        chooseOtherGender(my_gender);    
+        chooseOtherGender(my_gender); 
+        if(MatchingDescriptionsData.testName == "General"){ 
         SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -376,18 +380,23 @@ public void StopPersonGeneral(){
         
     }
     public void chooseOption2(){
-          Debug.Log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+          
         answersStack.Add(2);
         answer2.SetActive(false);
         answersToPick-=1;
         if(answersToPick<=0){
             
-            //markTest();
+            markTest();
             
             if(MatchingDescriptionsData.firstTest==true){
                 MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
+        if(MatchingDescriptionsData.testName == "General"){ 
         SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -400,12 +409,17 @@ public void StopPersonGeneral(){
         answersToPick-=1;
         if(answersToPick<=0){
             
-            //markTest();
+            markTest();
             
             if(MatchingDescriptionsData.firstTest==true){
                 MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
+        if(MatchingDescriptionsData.testName == "General"){ 
         SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -418,12 +432,17 @@ public void StopPersonGeneral(){
         answersToPick-=1;
         if(answersToPick<=0){
             
-            //markTest();
+            markTest();
             
             if(MatchingDescriptionsData.firstTest==true){
                 MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
+        if(MatchingDescriptionsData.testName == "General"){ 
         SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -436,12 +455,17 @@ public void StopPersonGeneral(){
         answersToPick-=1;
         if(answersToPick<=0){
             
-            //markTest();
+            markTest();
             
             if(MatchingDescriptionsData.firstTest==true){
                 MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
+        if(MatchingDescriptionsData.testName == "General"){ 
         SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -454,12 +478,17 @@ public void StopPersonGeneral(){
         answersToPick-=1;
         if(answersToPick<=0){
             
-            //markTest();
+            markTest();
             
             if(MatchingDescriptionsData.firstTest==true){
                 MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
+        if(MatchingDescriptionsData.testName == "General"){ 
         SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -472,13 +501,18 @@ public void StopPersonGeneral(){
         answersToPick-=1;
         if(answersToPick<=0){
             
-            //markTest();
+            markTest();
             
             if(MatchingDescriptionsData.firstTest==true){
                 MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
         MatchingDescriptionsData.firstTest = false;
+        if(MatchingDescriptionsData.testName == "General"){ 
         SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -491,12 +525,17 @@ public void StopPersonGeneral(){
         answersToPick-=1;
         if(answersToPick<=0){
             
-            //markTest();
+            markTest();
             
             if(MatchingDescriptionsData.firstTest==true){
                 MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
+        if(MatchingDescriptionsData.testName == "General"){ 
         SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -509,12 +548,17 @@ public void StopPersonGeneral(){
         answersToPick-=1;
         if(answersToPick<=0){
             
-            //markTest();
+            markTest();
             
             if(MatchingDescriptionsData.firstTest==true){
                 MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
+        if(MatchingDescriptionsData.testName == "General"){ 
         SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -527,12 +571,113 @@ public void StopPersonGeneral(){
         answersToPick-=1;
         if(answersToPick<=0){
             
-            //markTest();
+            markTest();
             
             if(MatchingDescriptionsData.firstTest==true){
                 MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
+        if(MatchingDescriptionsData.testName == "General"){ 
         SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
+
+    public void chooseOption11(){
+        answersStack.Add(11);
+        answer10.SetActive(false);
+        answersToPick-=1;
+        if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
+        chooseOtherGender(my_gender);    
+        if(MatchingDescriptionsData.testName == "General"){ 
+        SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
+
+    public void chooseOption12(){
+        answersStack.Add(12);
+        answer10.SetActive(false);
+        answersToPick-=1;
+        if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
+        chooseOtherGender(my_gender);    
+        if(MatchingDescriptionsData.testName == "General"){ 
+        SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
+
+    public void chooseOption13(){
+        answersStack.Add(13);
+        answer10.SetActive(false);
+        answersToPick-=1;
+        if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
+        chooseOtherGender(my_gender);    
+        if(MatchingDescriptionsData.testName == "General"){ 
+        SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
+        }
+        else{
+            SceneManager.LoadScene("EndScene");
+        }
+        }
+    }
+
+    public void chooseOption14(){
+        answersStack.Add(14);
+        answer10.SetActive(false);
+        answersToPick-=1;
+        if(answersToPick<=0){
+            
+            markTest();
+            
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
+        chooseOtherGender(my_gender);    
+        if(MatchingDescriptionsData.testName == "General"){ 
+        SceneManager.LoadScene("General");
+        }  
+        else{
+            SceneManager.LoadScene("ReligiousItems");
+        }
         }
         else{
             SceneManager.LoadScene("EndScene");

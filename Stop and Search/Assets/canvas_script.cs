@@ -103,7 +103,7 @@ public class canvas_script : MonoBehaviour
           case 1:
               SceneManager.LoadScene("CivillianScene");
               break;
-          case 2:
+          case 4:
                
                /*  MatchingDescriptionsData.PersonDescriptor description30 = new MatchingDescriptionsData.PersonDescriptor();
                 MatchingDescriptionsData.PersonDescriptor description31 = new MatchingDescriptionsData.PersonDescriptor();
@@ -144,7 +144,7 @@ public class canvas_script : MonoBehaviour
               MatchingDescriptionsData.testName = "ReligiousItem";
               SceneManager.LoadScene("ReligiousItems");
               break;
-          case 4:
+          case 2:
               
               MatchingDescriptionsData.firstTest=true;
               MatchingDescriptionsData.testName = "General";

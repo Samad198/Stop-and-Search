@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/UnlawfulStop.unity
-    guid: 422dfccb4ee54904ab0ed46239404734
   - enabled: 0
-    path: Assets/Scenes/MatchingDescriptions.unity
-    guid: 7a08a2876301b424d98ba4c739d7b5e5
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 514ea278bfd73b8449740b45ee28bc8c
+  - enabled: 1
+    path: Assets/Scenes/General.unity
+    guid: 9925ccce75e699f4aaea3ef086078149
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MatchingDescriptionsScene.unity
     guid: def15c13ee1b8914688d3fe88ec03bf1

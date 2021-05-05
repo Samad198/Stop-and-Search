@@ -35,16 +35,8 @@ public class canvas_script : MonoBehaviour
 
       public void LaunchScene(){
 
-  switch (scenario_code)
-      {
-          case 0:
-              SceneManager.LoadScene("CivillianScene");
-              break;
-          case 1:
-              SceneManager.LoadScene("CivillianScene");
-              break;
-          case 2:
-                MatchingDescriptionsData.PersonDescriptor description1 = new MatchingDescriptionsData.PersonDescriptor("25-30","male","IC1","grey top","grey shorts","slim","white trainers","blonde hair","A 25-30 year old IC1 slim male with blonde hair wearing a grey top, grey shorts and white trainers.");
+
+  MatchingDescriptionsData.PersonDescriptor description1 = new MatchingDescriptionsData.PersonDescriptor("25-30","male","IC1","grey top","grey shorts","slim","white trainers","blonde hair","A 25-30 year old IC1 slim male with blonde hair wearing a grey top, grey shorts and white trainers.");
                 MatchingDescriptionsData.PersonDescriptor description2 = new MatchingDescriptionsData.PersonDescriptor("35-40","female","IC3","red and black top","burgundy jeans","plump","white boots","black hair","A 35-40 year old IC3 plump female with black hair wearing a red and black top, burgundy jeans, white boots and black leather jacket.");
                 MatchingDescriptionsData.PersonDescriptor description3 = new MatchingDescriptionsData.PersonDescriptor("30-35","female","IC1","pink sweater vest","black shorts","","d3","flip-flops","A 30-35 IC1 skinny female with blonde hair wearing a white top, pink sweater vest, black shorts and flip-flops.");
                 MatchingDescriptionsData.PersonDescriptor description4 = new MatchingDescriptionsData.PersonDescriptor("18-23","female","IC1","white top","blue jeans","","d4","white pumps","An 18-23 year old IC1 athletic female with black hair wearing a white top, blue jeans and white pumps.");
@@ -73,7 +65,47 @@ public class canvas_script : MonoBehaviour
                 MatchingDescriptionsData.PersonDescriptor description27 = new MatchingDescriptionsData.PersonDescriptor("18-23","male","IC3","black hoodie","black jeans","","d27","black trainers","An 18-23 year old IC3 athletic male with black hair wearing a black hoodie, black jeans and black trainers.");
                 MatchingDescriptionsData.PersonDescriptor description28 = new MatchingDescriptionsData.PersonDescriptor("30-35","male","IC1","grey top","baggy black trousers","","d28","brown boots","A 30-35 year old bearded IC1 stocky male with black hair wearing a grey top, baggy black trousers, brown boots, orange vest and white helmet.");
                 MatchingDescriptionsData.PersonDescriptor description29 = new MatchingDescriptionsData.PersonDescriptor("20-25","male","IC3","white shirt","black jeans","","d29","black shoes","A 20-25 year old IC3 slim male with black hair wearing a white shirt, black jeans and black shoes.");
-                MatchingDescriptionsData.PersonDescriptor description30 = new MatchingDescriptionsData.PersonDescriptor();
+
+                MatchingDescriptionsData.PersonDescriptor[ ] personDs = new MatchingDescriptionsData.PersonDescriptor[]{
+                    description1, description2, description3,description4,description5,
+                    description6, description7, description8,description9,description10,
+                    description11, description12, description13,description14,description15,
+                    description16, description17, description18,description19,description20,
+                    description21, description22, description23,description24,description25,
+                    description26, description27, description28,description29 ,/*description30,
+                    description31, description32, description33,description34,description35,
+                    description36, description32, description38,description39,description40,
+                    description41, description42, description43,description44,description45,
+                    description46, description47, description48,description49,description50, */
+                    } ; 
+
+                     List <MatchingDescriptionsData.PersonDescriptor> personDescriptors = new List<MatchingDescriptionsData.PersonDescriptor>();
+                    for(int i=0; i<personDs.Length;i++){
+                        personDescriptors.Add(personDs[i]);
+                    }
+
+                    MatchingDescriptionsData.score = 100;
+                    MatchingDescriptionsData.personDescriptors = personDescriptors;
+                    int index = Random.Range(0, MatchingDescriptionsData.personDescriptors.Count);
+                    MatchingDescriptionsData.currentPersonDescriptor = MatchingDescriptionsData.personDescriptors[index];
+                    MatchingDescriptionsData.personDescriptors.RemoveAt(index);
+
+
+
+
+
+  switch (scenario_code)
+      {
+              
+          case 0:
+              SceneManager.LoadScene("CivillianScene");
+              break;
+          case 1:
+              SceneManager.LoadScene("CivillianScene");
+              break;
+          case 2:
+               
+               /*  MatchingDescriptionsData.PersonDescriptor description30 = new MatchingDescriptionsData.PersonDescriptor();
                 MatchingDescriptionsData.PersonDescriptor description31 = new MatchingDescriptionsData.PersonDescriptor();
                 MatchingDescriptionsData.PersonDescriptor description32 = new MatchingDescriptionsData.PersonDescriptor();
                 MatchingDescriptionsData.PersonDescriptor description33 = new MatchingDescriptionsData.PersonDescriptor();
@@ -93,42 +125,29 @@ public class canvas_script : MonoBehaviour
                 MatchingDescriptionsData.PersonDescriptor description47 = new MatchingDescriptionsData.PersonDescriptor();
                 MatchingDescriptionsData.PersonDescriptor description48 = new MatchingDescriptionsData.PersonDescriptor();
                 MatchingDescriptionsData.PersonDescriptor description49 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description50 = new MatchingDescriptionsData.PersonDescriptor();
+                MatchingDescriptionsData.PersonDescriptor description50 = new MatchingDescriptionsData.PersonDescriptor(); */
 
-                MatchingDescriptionsData.PersonDescriptor[ ] personDs = new MatchingDescriptionsData.PersonDescriptor[]{
-                    description1, description2, description3,description4,description5,
-                    description6, description7, description8,description9,description10,
-                    description11, description12, description13,description14,description15,
-                    description16, description17, description18,description19,description20,
-                    description21, description22, description23,description24,description25,
-                    description26, description27, description28,description29,description30,
-                    description31, description32, description33,description34,description35,
-                    description36, description32, description38,description39,description40,
-                    description41, description42, description43,description44,description45,
-                    description46, description47, description48,description49,description50,
-                    } ; 
+                
 
-                    List <MatchingDescriptionsData.PersonDescriptor> personDescriptors = new List<MatchingDescriptionsData.PersonDescriptor>();
-                    for(int i=0; i<personDs.Length;i++){
-                        personDescriptors.Add(personDs[i]);
-                    }
+                   
 
               /*
               pass personDescriptors
               */
-              MatchingDescriptionsData.score = 100;
-              MatchingDescriptionsData.testsLeft = 10;
-              MatchingDescriptionsData.personDescriptors = personDescriptors;
-              int index = Random.Range(0, MatchingDescriptionsData.personDescriptors.Count);
-              MatchingDescriptionsData.currentPersonDescriptor = MatchingDescriptionsData.personDescriptors[index];
-              MatchingDescriptionsData.personDescriptors.RemoveAt(index);
-
+              
+              MatchingDescriptionsData.testsLeft = 3;
               SceneManager.LoadScene("MatchingDescriptionsScene");
               break;
-          case 3: 
+          case 3:
+              MatchingDescriptionsData.firstTest=true; 
+              
+              MatchingDescriptionsData.testName = "ReligiousItem";
               SceneManager.LoadScene("ReligiousItems");
               break;
-          case 4: 
+          case 4:
+              
+              MatchingDescriptionsData.firstTest=true;
+              MatchingDescriptionsData.testName = "General";
               SceneManager.LoadScene("General");
               break;
           default:
@@ -143,10 +162,12 @@ public class canvas_script : MonoBehaviour
         genderMenu.SetActive(false);
         occupationMenu.SetActive(true);
         if(male == true){
+            MatchingDescriptionsData.gender="male"; 
             genderText = "Male";
             configurationText.text = genderText+"\nSelect Occupation";
         }
         else{
+            MatchingDescriptionsData.gender="female"; 
             genderText = "Female";
             configurationText.text = genderText+"\nSelect Occupation";
         }

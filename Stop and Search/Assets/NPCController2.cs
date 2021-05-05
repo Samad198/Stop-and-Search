@@ -11,7 +11,7 @@ public class NPCController2 : MonoBehaviour
 
     private List<int> answersStack = new List<int>();
     private List<int> correctAnswersStack = new List<int>();
-    private int answersToPick;
+    public int answersToPick;
 
 
     private Animator animator;
@@ -167,9 +167,9 @@ public class NPCController2 : MonoBehaviour
          my_hair = pd.hair;
 
          switch(MatchingDescriptionsData.testName){
-             case "MatchingDescriptions":
-             break;
+             
              case "General":
+                answersToPick =3;
              if(MatchingDescriptionsData.gender == my_gender){
               correctAnswersStack.Add(1); // answer 1
               correctAnswersStack.Add(2); // answer 2
@@ -183,7 +183,7 @@ public class NPCController2 : MonoBehaviour
               correctAnswersStack.Add(10); // answer 10
              }
              else{
-                 correctAnswersStack.Add(1); // answer 1
+              correctAnswersStack.Add(1); // answer 1
               correctAnswersStack.Add(2); // answer 2
               correctAnswersStack.Add(3); // answer 3
               correctAnswersStack.Add(4); // answer 4
@@ -196,6 +196,7 @@ public class NPCController2 : MonoBehaviour
              }
              break;
              case "ReligiousItem":
+             answersToPick =3;
               if(MatchingDescriptionsData.gender == my_gender){
               correctAnswersStack.Add(1); // answer 1
               correctAnswersStack.Add(2); // answer 2
@@ -222,6 +223,7 @@ public class NPCController2 : MonoBehaviour
              }
              break;
              default:
+
              break;
 
          }
@@ -235,8 +237,25 @@ public class NPCController2 : MonoBehaviour
 
         /*   if (Input.GetKeyDown("space"))
         {
-            StopPersonGeneral();
+            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         } */
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            chooseOption1();
+        }
+          if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+           chooseOption2();
+        }
+          if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            chooseOption3();
+        }
+          if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+           chooseOption4();
+        }
  
         if( isFocused == true) // the character is focused
         {
@@ -289,7 +308,7 @@ public class NPCController2 : MonoBehaviour
      
 public void StopPersonGeneral(){
          
-    /* if(MatchingDescriptionsData.currentPersonDescriptor.age_range != "" && my_age_range != MatchingDescriptionsData.currentPersonDescriptor.age_range ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 2;}
+    if(MatchingDescriptionsData.currentPersonDescriptor.age_range != "" && my_age_range != MatchingDescriptionsData.currentPersonDescriptor.age_range ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 2;}
     if(MatchingDescriptionsData.currentPersonDescriptor.race != "" && my_race != MatchingDescriptionsData.currentPersonDescriptor.race  ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 5;}
     if(MatchingDescriptionsData.currentPersonDescriptor.gender != "" && my_gender != MatchingDescriptionsData.currentPersonDescriptor.gender ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 5;}
     if(MatchingDescriptionsData.currentPersonDescriptor.clothes_top != "" && my_clothes_top != MatchingDescriptionsData.currentPersonDescriptor.clothes_top  ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 1;}
@@ -300,10 +319,10 @@ public void StopPersonGeneral(){
     MatchingDescriptionsData.testsLeft -= 1;
 
     canvasGroup.alpha = 0f;
-    canvasGroup.interactable = false; */
+    canvasGroup.interactable = false;
     
         
-         answerButtons.SetActive(true);
+    answerButtons.SetActive(true);
     
   
     
@@ -334,16 +353,7 @@ public void StopPersonGeneral(){
                 }
             }
         }
-        /* public void chooseOption1(){}
-        public void chooseOption2(){}
-        public void chooseOption3(){}
-        public void chooseOption4(){}
-        public void chooseOption5(){}
-        public void chooseOption6(){}
-        public void chooseOption7(){}
-        public void chooseOption8(){}
-        public void chooseOption9(){}
-        public void chooseOption10(){} */
+        
 
      public void chooseOption1(){
         answersStack.Add(1);
@@ -352,11 +362,12 @@ public void StopPersonGeneral(){
         if(answersToPick<=0){
             // calculate the users points, set it to the static script, send them to end scene or to the same scene but for girl
             // this time
-            markTest();
+            //markTest();
             
-            if(MatchingDescriptionsData.firstTest==false){
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
-        SceneManager.LoadScene("MatchingDescriptionsScene");
+        SceneManager.LoadScene("General");
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -368,29 +379,33 @@ public void StopPersonGeneral(){
           Debug.Log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
         answersStack.Add(2);
         answer2.SetActive(false);
-        /* if(answersToPick<=0){
+        answersToPick-=1;
+        if(answersToPick<=0){
             
-            markTest();
+            //markTest();
             
-            if(MatchingDescriptionsData.firstTest==false){
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
-        SceneManager.LoadScene("MatchingDescriptionsScene");
+        SceneManager.LoadScene("General");
         }
         else{
             SceneManager.LoadScene("EndScene");
         }
-        } */
+        }
     }
     public void chooseOption3(){
         answersStack.Add(3);
         answer3.SetActive(false);
+        answersToPick-=1;
         if(answersToPick<=0){
             
-            markTest();
+            //markTest();
             
-            if(MatchingDescriptionsData.firstTest==false){
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
-        SceneManager.LoadScene("MatchingDescriptionsScene");
+        SceneManager.LoadScene("General");
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -400,13 +415,15 @@ public void StopPersonGeneral(){
     public void chooseOption4(){
         answersStack.Add(4);
         answer4.SetActive(false);
+        answersToPick-=1;
         if(answersToPick<=0){
             
-            markTest();
+            //markTest();
             
-            if(MatchingDescriptionsData.firstTest==false){
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
-        SceneManager.LoadScene("MatchingDescriptionsScene");
+        SceneManager.LoadScene("General");
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -416,13 +433,15 @@ public void StopPersonGeneral(){
     public void chooseOption5(){
         answersStack.Add(5);
         answer5.SetActive(false);
+        answersToPick-=1;
         if(answersToPick<=0){
             
-            markTest();
+            //markTest();
             
-            if(MatchingDescriptionsData.firstTest==false){
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
-        SceneManager.LoadScene("MatchingDescriptionsScene");
+        SceneManager.LoadScene("General");
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -432,13 +451,15 @@ public void StopPersonGeneral(){
     public void chooseOption6(){
         answersStack.Add(6);
         answer6.SetActive(false);
+        answersToPick-=1;
         if(answersToPick<=0){
             
-            markTest();
+            //markTest();
             
-            if(MatchingDescriptionsData.firstTest==false){
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
-        SceneManager.LoadScene("MatchingDescriptionsScene");
+        SceneManager.LoadScene("General");
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -448,13 +469,16 @@ public void StopPersonGeneral(){
     public void chooseOption7(){
         answersStack.Add(7);
         answer7.SetActive(false);
+        answersToPick-=1;
         if(answersToPick<=0){
             
-            markTest();
+            //markTest();
             
-            if(MatchingDescriptionsData.firstTest==false){
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
-        SceneManager.LoadScene("MatchingDescriptionsScene");
+        MatchingDescriptionsData.firstTest = false;
+        SceneManager.LoadScene("General");
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -464,13 +488,15 @@ public void StopPersonGeneral(){
     public void chooseOption8(){
         answersStack.Add(8);
         answer8.SetActive(false);
+        answersToPick-=1;
         if(answersToPick<=0){
             
-            markTest();
+            //markTest();
             
-            if(MatchingDescriptionsData.firstTest==false){
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
-        SceneManager.LoadScene("MatchingDescriptionsScene");
+        SceneManager.LoadScene("General");
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -480,13 +506,15 @@ public void StopPersonGeneral(){
     public void chooseOption9(){
         answersStack.Add(9);
         answer9.SetActive(false);
+        answersToPick-=1;
         if(answersToPick<=0){
             
-            markTest();
+            //markTest();
             
-            if(MatchingDescriptionsData.firstTest==false){
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
-        SceneManager.LoadScene("MatchingDescriptionsScene");
+        SceneManager.LoadScene("General");
         }
         else{
             SceneManager.LoadScene("EndScene");
@@ -496,13 +524,15 @@ public void StopPersonGeneral(){
     public void chooseOption10(){
         answersStack.Add(10);
         answer10.SetActive(false);
+        answersToPick-=1;
         if(answersToPick<=0){
             
-            markTest();
+            //markTest();
             
-            if(MatchingDescriptionsData.firstTest==false){
+            if(MatchingDescriptionsData.firstTest==true){
+                MatchingDescriptionsData.firstTest = false;
         chooseOtherGender(my_gender);    
-        SceneManager.LoadScene("MatchingDescriptionsScene");
+        SceneManager.LoadScene("General");
         }
         else{
             SceneManager.LoadScene("EndScene");

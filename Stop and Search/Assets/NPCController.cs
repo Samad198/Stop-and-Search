@@ -64,7 +64,7 @@ public class NPCController : MonoBehaviour
                 pd = new PD("25-30","male","IC1","grey top","grey shorts","slim","white trainers","blonde hair","A 25-30 year old IC1 slim male with blonde hair wearing a grey top, grey shorts and white trainers");
              break;
              case 2:
-             pd = new PD("25-30","male","IC1","grey top","grey shorts","slim","white trainers","blonde hair","A 25-30 year old IC1 slim male with blonde hair wearing a grey top, grey shorts and white trainers");
+             pd = new PD("35-40","female","IC3","red and black top","burgundy jeans","plump","white boots","black hair","A 35-40 year old IC3 plump female with black hair wearing a red and black top, burgundy jeans, white boots and black leather jacket.");
              break;
              case 3:
              pd = new PD("25-30","male","IC1","grey top","grey shorts","slim","white trainers","blonde hair","A 25-30 year old IC1 slim male with blonde hair wearing a grey top, grey shorts and white trainers");
@@ -194,7 +194,7 @@ public class NPCController : MonoBehaviour
          }
  
             //transform.position += Vector3.forward * Time.deltaTime * movementSpeed;
-            //transform.position += transform.forward * Time.deltaTime * 2.0f;
+            transform.position += transform.forward * Time.deltaTime * 2.0f;
          
         }
      }

@@ -149,19 +149,19 @@ public class officer_controller : MonoBehaviour
             animator.Play("Idle");
             gameText.text = "Once an officer has searched you, you are entitled to a copy of the "+
 	                        "search record. A search record is a record that officers keep of "+
-                            "what actions they performed. You can use this to...";
+                            "what actions they performed. You can use this to qoute what was done if you decide to file a report";
 	                        
             gameTextObject.SetActive(true);
               if (Input.anyKey)
         {
             gameTextObject.SetActive(false);
             sequenceNumber =6;
-            sounds[4].source.Play();
+            sounds[5].source.Play();
             
         }
             }
             else{
-animator.Play("Walking"); // make officer perform stom routine
+animator.Play("Petting"); // make officer perform stom routine
             }
             
             

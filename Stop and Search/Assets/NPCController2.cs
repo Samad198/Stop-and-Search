@@ -17,7 +17,7 @@ public class NPCController2 : MonoBehaviour
     private Animator animator;
    
     public CanvasGroup canvasGroup;
-    public GameObject knife;
+    public GameObject religiousItem;
     public GameObject answerButtons;
     public GameObject answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8,answer9,answer10,answer11,answer12,answer13,answer14;
     
@@ -320,7 +320,7 @@ public void StopPersonGeneral(){
         
     answerButtons.SetActive(true);
     if(MatchingDescriptionsData.testName != "General"){ 
-        knife.SetActive(true);
+        religiousItem.SetActive(true);
         }  
         
   

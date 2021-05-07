@@ -57,7 +57,7 @@ public class NPCController : MonoBehaviour
          canvasGroup.alpha = 0f;
         
          
-         
+         // initialize character description variables
             PD pd = null;
          switch(personId){
             case 1:
@@ -173,7 +173,7 @@ public class NPCController : MonoBehaviour
  
         if( isFocused == true) // the character is focused
         {
-            
+                // look at player and stand still
                 transform.LookAt(player);
                 animator.Play("Idle");
                 canvasGroup.alpha = 1f;
@@ -194,7 +194,7 @@ public class NPCController : MonoBehaviour
          }
  
             //transform.position += Vector3.forward * Time.deltaTime * movementSpeed;
-            transform.position += transform.forward * Time.deltaTime * 2.0f;
+            transform.position += transform.forward * Time.deltaTime * 2.0f; // move forward
          
         }
      }
@@ -215,10 +215,12 @@ public class NPCController : MonoBehaviour
         isFocused = true;
         timeToStopLook = 10000000000000000000.0f;
     }
+
     public void StopLookAt(){
         timeToStopLook = 5.0f;
     }
      
+     // calculate points based on choice then relaunch the scene or go to end scene
      public void StopPerson(){
           
     if(MatchingDescriptionsData.currentPersonDescriptor.age_range != "" && my_age_range != MatchingDescriptionsData.currentPersonDescriptor.age_range ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 2;}

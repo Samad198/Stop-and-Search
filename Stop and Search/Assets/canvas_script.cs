@@ -31,7 +31,9 @@ public class canvas_script : MonoBehaviour
     
     
 
-
+        // initialize the static script with the character descriptions
+        // pick a random character to be the first description
+        // launch scene
       public void LaunchScene(){
 
 
@@ -103,35 +105,6 @@ public class canvas_script : MonoBehaviour
               SceneManager.LoadScene("CivillianScene");
               break;
           case 2:
-               
-               /*  MatchingDescriptionsData.PersonDescriptor description30 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description31 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description32 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description33 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description34 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description35 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description36 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description37 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description38 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description39 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description40 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description41 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description42 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description43 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description44 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description45 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description46 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description47 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description48 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description49 = new MatchingDescriptionsData.PersonDescriptor();
-                MatchingDescriptionsData.PersonDescriptor description50 = new MatchingDescriptionsData.PersonDescriptor(); */
-
-                
-
-                   
-
-              
-              
               MatchingDescriptionsData.testsLeft = 3;
               SceneManager.LoadScene("MatchingDescriptionsScene");
               break;

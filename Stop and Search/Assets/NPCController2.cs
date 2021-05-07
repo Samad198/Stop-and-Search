@@ -62,7 +62,7 @@ public class NPCController2 : MonoBehaviour
          canvasGroup.alpha = 0f;
          answerButtons.SetActive(false);
          
-         
+         // initialize character description variables
             PD pd = null;
          switch(personId){
              case 1:
@@ -167,20 +167,22 @@ public class NPCController2 : MonoBehaviour
          my_shoes = pd.shoes;
          my_hair = pd.hair;
 
+
+        // generate correct test answers depending on the character and scene
          switch(MatchingDescriptionsData.testName){            
              case "General":
                 answersToPick =10;
                 correctAnswersStack.Add(1); // answer 1
                 correctAnswersStack.Add(4); // answer 2
-                correctAnswersStack.Add(3); // answer 3
-                correctAnswersStack.Add(2); // answer 4
-                correctAnswersStack.Add(5); // answer 5
-                correctAnswersStack.Add(7); // answer 6
-                correctAnswersStack.Add(9); // answer 7
+                correctAnswersStack.Add(2); // answer 3
+                correctAnswersStack.Add(5); // answer 4
+                correctAnswersStack.Add(9); // answer 5
+                correctAnswersStack.Add(6); // answer 6
+                correctAnswersStack.Add(11); // answer 7
                 correctAnswersStack.Add(14); // answer 8
                 correctAnswersStack.Add(12); // answer 9
              if(MatchingDescriptionsData.gender == my_gender){
-              correctAnswersStack.Add(6); // answer 10
+              correctAnswersStack.Add(7); // answer 10
              }
              else{ 
               correctAnswersStack.Add(8); // answer 10
@@ -190,16 +192,16 @@ public class NPCController2 : MonoBehaviour
              answersToPick =11;
                 correctAnswersStack.Add(1); // answer 1
                 correctAnswersStack.Add(4); // answer 2
-                correctAnswersStack.Add(3); // answer 3
-                correctAnswersStack.Add(2); // answer 4
-                correctAnswersStack.Add(5); // answer 5
-                correctAnswersStack.Add(7); // answer 6
-                correctAnswersStack.Add(9); // answer 7
+                correctAnswersStack.Add(2); // answer 3
+                correctAnswersStack.Add(5); // answer 4
+                correctAnswersStack.Add(9); // answer 5
+                correctAnswersStack.Add(6); // answer 6
+                correctAnswersStack.Add(11); // answer 7
                 correctAnswersStack.Add(14); // answer 8
                 correctAnswersStack.Add(12); // answer 9
                 correctAnswersStack.Add(10); // answer 10
               if(MatchingDescriptionsData.gender == my_gender){
-               correctAnswersStack.Add(6); // answer 11
+               correctAnswersStack.Add(7); // answer 11
              }
              else{
                  correctAnswersStack.Add(8); // answer 11
@@ -219,25 +221,12 @@ public class NPCController2 : MonoBehaviour
          timeToStopLook -= Time.deltaTime;
 
         
-          if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            chooseOption5();
-           chooseOption6();
-           chooseOption7();
-           chooseOption8();
-           chooseOption9();
-           chooseOption10();
-           chooseOption1();
-           chooseOption2();
-           chooseOption3();
-           chooseOption4();
-          
-        }
+         
         
  
         if( isFocused == true) // the character is focused
         {
-            
+                // look at the player and stand still
                 transform.LookAt(player);
                 animator.Play("Idle");
                 canvasGroup.alpha = 1f;
@@ -282,6 +271,7 @@ public class NPCController2 : MonoBehaviour
     }
      
      
+     // subtract points if person is different to description
 public void StopPersonGeneral(){
          
     if(MatchingDescriptionsData.currentPersonDescriptor.age_range != "" && my_age_range != MatchingDescriptionsData.currentPersonDescriptor.age_range ){MatchingDescriptionsData.score = MatchingDescriptionsData.score - 2;}
@@ -297,7 +287,7 @@ public void StopPersonGeneral(){
     canvasGroup.alpha = 0f;
     canvasGroup.interactable = false;
     
-        
+        // start multiple choice test
     answerButtons.SetActive(true);
     if(MatchingDescriptionsData.testName != "General"){ 
         religiousItem.SetActive(true);
@@ -307,6 +297,7 @@ public void StopPersonGeneral(){
     
      }
 
+        // choose a new character for the next scene of a different gender
         public void chooseOtherGender(string gen){
         int index = Random.Range (0, MatchingDescriptionsData.personDescriptors.Count);
         if(MatchingDescriptionsData.personDescriptors[index].gender != gen){
@@ -316,6 +307,7 @@ public void StopPersonGeneral(){
         else{chooseOtherGender(gen);}
         }
 
+        // mark the users multiple choice answers by comparing them to the correct answer stack
         public void markTest(){
             for(int i=0; i<correctAnswersStack.Count;i++){
                 int correctAnswer = correctAnswersStack[i];

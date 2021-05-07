@@ -17,6 +17,8 @@ public class canvas_script : MonoBehaviour
     public Text configurationText;
     public int backState = 0;
     public int scenario_code = 0;
+
+
     /*backState codes
     0 = go back to gender screen
     1 = go back to occupation screen
@@ -26,10 +28,7 @@ public class canvas_script : MonoBehaviour
 
     
 
-    // list of unused personDescriptors
-    // list of used personDescriptors
-    // score
-    // currentPersonDescriptor = null
+    
     
 
 
@@ -103,7 +102,7 @@ public class canvas_script : MonoBehaviour
           case 1:
               SceneManager.LoadScene("CivillianScene");
               break;
-          case 4:
+          case 2:
                
                /*  MatchingDescriptionsData.PersonDescriptor description30 = new MatchingDescriptionsData.PersonDescriptor();
                 MatchingDescriptionsData.PersonDescriptor description31 = new MatchingDescriptionsData.PersonDescriptor();
@@ -131,9 +130,7 @@ public class canvas_script : MonoBehaviour
 
                    
 
-              /*
-              pass personDescriptors
-              */
+              
               
               MatchingDescriptionsData.testsLeft = 3;
               SceneManager.LoadScene("MatchingDescriptionsScene");
@@ -144,7 +141,7 @@ public class canvas_script : MonoBehaviour
               MatchingDescriptionsData.testName = "ReligiousItem";
               SceneManager.LoadScene("ReligiousItems");
               break;
-          case 2:
+          case 4:
               
               MatchingDescriptionsData.firstTest=true;
               MatchingDescriptionsData.testName = "General";
